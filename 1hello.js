@@ -6,7 +6,7 @@ console.log('Hello World!')
 //2. or right click and select "Run Hello.js"
 
 //In your terminal or command prompt, navigate to the directory 1hello.js is saved in
-// Your editor may have a a terminal built in, which should open to the correct location
+// Your editor may have a terminal built in, which should open to the correct location
 // VSCode: Tools > New Terminal
 // Webstorm: Click Terminal icon, bottom icon bar, left side
 // Type this to run your code
