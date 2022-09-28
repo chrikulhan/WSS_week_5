@@ -1,3 +1,5 @@
+//more examples: https://github.com/claraj/week4-examples/blob/main/hello.js
+
 console.log('Hello World!')
 
 //ways to get this to run using webstorm:

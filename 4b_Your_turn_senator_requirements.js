@@ -20,9 +20,88 @@ if(age >=30 && usCitizenTime >=9 && stateOfResidence === stateWantToRepresent) {
 //falsy values -undefined values that are considered false include (or falsy):
     //undefined,
     // null,
+    // the value false
     // the number zero,
     // empty lists
     // empty objects
-    // false
 
-//example: stopped at timestamp 9:15, video 4
+//examples of weird things that happen in javascript with falsy values:
+if ('' == 0) {
+    console.log('the same')
+    } else {
+    console.log('not the same')
+}
+//output: the same
+
+if (false == 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: the same
+
+if (undefined == 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: not the same
+
+//empty list:
+if ([] == 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: the same
+
+//empty object:
+if ({} == 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: not the same
+
+
+//to fix the above same/not the same issues, use === (best practice):
+if ('' === 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: not the same
+
+if (false === 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: not the same
+
+if (undefined === 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: not the same
+
+//empty list:
+if ([] === 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: not the same
+
+//empty object:
+if ({} === 0) {
+    console.log('the same')
+} else {
+    console.log('not the same')
+}
+//output: not the same
+
+//use === unless you know you want "type coercion" to happen
+// type coercion = wanting to compare a string value from a form
+//against a number.
