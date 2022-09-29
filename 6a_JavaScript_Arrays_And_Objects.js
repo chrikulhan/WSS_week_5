@@ -40,21 +40,41 @@ console.log(animals)
  */
 
 //Array variable (like a list in python)
-let quiz_scores = [100, 78, 93, 81, 100, 99]
-console.log(quiz_scores)
+//more common to keep the same type of data together.
 
-//Another array. Can mix types if needed
-let my_array = [5, 6, 'cake', 1234.124, text]
-//text is not defined is erroring out. Perhaps I didn't get node.js like I thought?
-
-//Print whole array
-console.log(my_array)
+// let quiz_scores = [100, 78, 93, 81, 100, 99]
+// console.log(quiz_scores)
+//
+// //Another array. Can mix types if needed
+// let my_array = [5, 6, 'cake', 1234.124, text]
+// //text is not defined is erroring out.
+//
+// //Print whole array
+// console.log(my_array)
 
 //Read individual elements
-console.log(my_array[0])
-console.log(my_array[2])
-console.log(my_array[-10])
-console.log(my_array[10])
+// console.log(my_array[0])
+// console.log(my_array[2])
+// console.log(my_array[-10])
+// console.log(my_array[10])
 
 //Can modify elements by index
+
+//examples from video 6 timestamp 3:30
+
+let animals2 = ['lion', 'tiger', 'cheetah']
+
+console.log(animals2)
+//output:[ 'lion', 'tiger', 'cheetah' ]
+console.log(animals2[1])
+//output:tiger
+console.log(animals2[1000])
+//output: undefined
+
+animals[6] = 'giraffe'
+console.log(animals2)
+//output: [ 'lion', 'tiger', 'cheetah' ]
+
+//stopped at timestamp 4:16
+
 
