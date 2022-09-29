@@ -165,4 +165,17 @@ let removeWhitespace = text.trim() //Remove spaces, tabs, newlines, etc., from b
 console.log(stringLength, shout,      whisper,    whereIsW, whereIsZ, whisperAndShout,       replace0,   replaceAll0, removeWhitespace)
 //output:   11            HELLO WORLD hello world 6         -1        hello worldHELLO WORLD hell0 world hell0 w0rld  hello world
 
-// stopped at video 5 timestamp ~10:20
+let message = 'The classes are 1150, 1250, 2560'
+//replace every 4 digit number (ex. 1150) in the above string and replace it with
+// ITEC and a 4 digit number
+// /d{4}/g is interpreted as: (match (/) each digit (d) that is repeated 4
+//times {4}/g
+let replaceRegex = message.replace(/d{4}/g, 'ITEC $&')
+console.log(replaceRegex)
+//output: The classes are 1150, 1250, 2560
+//MORE INFO here if needed. : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+//Weird javscript:
+//https://github.com/denysdovhan/wtfjs **jokes**
+
+//Could maybe use debugger in devtools?
