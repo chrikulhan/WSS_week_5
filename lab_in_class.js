@@ -1,0 +1,162 @@
+// https://github.com/claraj/week4-examples/blob/main/form_errors/tree_order_form_lab_template.html
+// week4-examples/form_errors/tree_order_form_lab_template.html
+// @claraj
+// claraj add optional extra visual feedback for errors
+//     Latest commit e5cc3b1 on Apr 19
+// History
+// 1 contributor
+// 128 lines (88 sloc) 4.39 KB
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Tree Order Form</title>
+
+<style>
+
+    input, select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 5px 5px 0px;
+    box-sizing: border-box;
+}
+
+    input.error, select.error {
+    border: 2px red solid;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Minnesota Tree Order Form</h1>
+
+<p>Enter information to order your tree. All fields are required.</p>
+
+<h2>Order Information</h2>
+
+<label for="homeowner-name">Homeowner Name</label><input id="homeowner-name" name="homeowner-name">
+    <br>
+        <label for="homeowner-house-number">House Number</label><input id="homeowner-house-number" name="homeowner-house-number">
+        <br>
+            <label for="homeowner-street-name">Street Name</label><input id="homeowner-street-name" name="homeowner-street-name">
+            <br>
+                <label for="city">City</label><input id="city" name="city">
+                <br>
+                    <!-- All orders must be for Minnesota, so this input is not editable -->
+                    <label for="state">State</label><input id="state" name="state" value="Minnesota" disabled>
+                    <br>
+                        <label for="zipcode">Zip Code</label><input id="zipcode" name="zipcode">
+                        <br>
+
+                            <label for="tree-type">Tree Type</label>
+                            <select id="tree-type">
+                                <!-- Unselectable message shown. Since this will be required, it forces the user to actually pick a tree, not just click submit for the default first option -->
+                                <option disabled selected value=""> Select a tree </option>
+                                <!-- The options that the user will be allowed to select, or choose from -->
+                                <option name="tree-type">Cedar</option>
+                                <option name="tree-type">Maple</option>
+                                <option name="tree-type">Oak</option>
+                            </select>
+                            <br>
+
+                                <button id="submit-order">Submit Order</button>
+
+                                <h2>Order Summary</h2>
+
+                                <p id="order-summary">
+                                    <!-- TODO Use JavaScript to display the order information,
+                                        only if all the required information is entered  -->
+                                </p>
+
+
+
+                                <script>
+
+                                    let homeownerNameInput = document.querySelector('#homeowner-name')
+                                    let homeownerHouseNumberInput = document.querySelector('#homeowner-house-number')
+                                    let homeownerStreetNameInput = document.querySelector('#homeowner-street-name')
+                                    let treeTypeSelect = document.querySelector('#tree-type')
+
+                                    // TODO create a variable for city input element
+                                    // TODO create a variable for zip code input element
+
+                                    let submitButton = document.querySelector('#submit-order')
+
+                                    let orderSummaryParagraph = document.querySelector('#order-summary')
+
+                                    submitButton.addEventListener('click', function() {
+
+                                    let name = homeownerNameInput.value
+                                    let houseNumber = homeownerHouseNumberInput.value
+                                    let streetName = homeownerStreetNameInput.value
+                                    let treeType = treeTypeSelect.value
+
+                                    // TODO get the value from the input#city
+                                    // TODO get the value from the input#zipcode
+                                    //NOTES: **** let zipCode = zipCodeInput.value
+
+                                    // TODO Validate that all six input and select elements have been completed
+                                    //  - check they all have a value
+
+                                    // TODO Validate the zipcode is in the range 55001 and 56763.
+                                    // to check that the zip code is in Minnesota.
+                                    // Make sure your script doesn't accept non-numeric input for the zip code.
+
+/*NOTES **** Check errors array, what does it mean if there is strings in it?
+    *There was at least one problem. The form isn't completely filled in.
+**** What does it mean if the errors array DOESN"T have strings in it?
+    ***Form has passed all the validation checks., length is zero., process the data     */
+
+                                    // Optional extra: add the class .error to any inputs with an error (and only inputs with an error)
+                                    // to give the user visual feedback for which inputs need to be fixed or completed.
+                                    // There's a style for input.error and select.error defined in the styles (in the head)
+                                    // which will be applied if you give the class .error to any elements on the page.
+                                    // Make sure you remove this class when the form is completed correctly.
+
+                                    let errors = []
+
+                                    // If a form element has not been completed, or if the data is not valid,
+                                    // add an error message to the errors array. (Hint: use push to add to the end of the array)
+                                    // Add one error message for each problem with the form.
+
+                                    //IN CLASS Todo independently check all possible problems.
+                                    //NOTES: make sure a name with at leats one letter is entered
+                                    // if (name.trim().length ===0){ //is a name entered, optionally trim white space before and after
+                                    if (name.length ===0){
+                                        //problem with form
+                                    //add a message to errors array - should be user friendly since user will see it.
+                                    errors.push('Name was not entered, please enter your name.')
+                                }
+                                    /*NOTES: check house number*/
+                                    if (houseNumber.lenght === 0){ ///hard to validate
+                                        //USpost office has an API that you can send them to see if it's a real address
+                                    errors.push ('House number wass not entered.'
+                                     //NOTES ETC.
+
+                                    /*NOTES:  */
+                                    if (errors.length>0) { //length greater than 0? there is at least one problem
+                                    alert(errors.join('\n'));
+                                    //should we keep processing if there are errors?
+                                    return //we're done with the function., stop processing.
+                                }
+                                    // TODO - If there are any errors after checking all of the input elements,
+                                    // display an alert with all of the error messages. (Hint: use join)
+                                    // and then return from this function to prevent further processing
+
+
+                                    // TODO - If there are no errors, use a template string to display an order
+                                    // summary in the order summary paragraph.
+
+
+                                })
+
+
+
+                                </script>
+
+</body>
+</html>
+
+
+
