@@ -1,0 +1,70 @@
+//Arrays in the browser(from powerpoint notes):
+/*
+    -Student list form, last week's lab
+    -In a form, there could be many input errors
+    -Use array to make a list of all the problems
+    -push adds to the array
+    -'join' joins all the errors strings for display
+    -Check length property
+
+
+
+/*Instead of anticipating all possible problems, you can write
+and check all the inputs by pushing the errors into the errors array
+and then checking if the errors array is empty or not.
+
+ */
+
+let name = studentName.value
+let gpa = studentGPA.value
+let id = studentID.value
+
+//errors array:
+let errors = []
+
+if (!name){
+    errors.push('Enter student name')
+}
+
+if(!id){
+    errors.push('Enter student ID')
+}
+
+//is there "no gpa" = !gpa, || = "or"
+if (!gpa || gpa < 0) || gpa > 4 ) {
+    errors.push('Enter your GPA between 0 and 4')
+}
+
+//if the errors array is empty, then the form must be valid.
+//BUT if the length of the errors array is > 0, then there are errors.
+if(errors.length > 0) {
+    //tell the user by joining all the error messages together, using
+    //the newline character: '\n'
+    let errorMsg = errors.join ('\n')
+    //and then using an alert to show dialog to the user:
+    alert(errorMsg)
+    //assume this code is inside an event handler function, so use 'return'
+    //would mean stop processing the code.
+    return
+}
+//if there were no errors, you'd start writing code down here.
+
+//Your turn: Tree order form: (see 7ba for the original code and 7bb for the
+//working code.
+
+//**Form validation: (video 7, timestamp 7:26)
+/* -Why not rely on HTML form validation?
+(examples: required values, number validation, min and max value.)
+-Not all browsers handle validation attributes in the same way
+-For example, Safari doesn't enforce required elements
+-HTML form validation is helpful...
+    -But JavaScript form validation is not only *more reliable* to the client,
+    and more user-friendly, but also more flexible and powerful.
+
+-When we get to servers, we'll talk about why JavaScript validation
+is ONLY to be user-friendly, and why you should validate AGAIN
+on the server before you save data. It's very very easy to bypass
+client-side checks on data
+
+*/
+
