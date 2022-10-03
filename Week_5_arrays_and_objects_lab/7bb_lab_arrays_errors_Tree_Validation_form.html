@@ -74,6 +74,7 @@
 
     // TODO create a variable for city input element
     let homeownerCityInput = document.querySelector('#city')
+
     // TODO create a variable for zip code input element
     let homeownerZipCodeInput = document.querySelector('#zipcode')
 
@@ -88,39 +89,36 @@
         let streetName = homeownerStreetNameInput.value
         let treeType = treeTypeSelect.value
 
-        // let errors = []
-
         // TODO get the value from the input#city
         let city = homeownerCityInput.value
 
         // TODO get the value from the input#zipcode
-        let ZipCode = homeownerZipCodeInput.value
-
+        let zipCode = homeownerzipCodeInput.value
 
         // TODO Validate that all six input and select elements have been completed
         //  - check they all have a value
-        if (!name){
-            errors.push('Please enter the homeowner name')
+        if (name.length > 0)
+        if (houseNumber.length > 0)
+        if (streetName.length > 0)
+        if (treeType.length > 0)
+        if (city.length > 0)
+        if (zipCode > 0){
+        else
+            return
         }
-        if (!houseNumber){
-            errors.push('Please enter the house number associated with your address. ')
-        }
-        if(!streetName){
-            errors.push('Please enter the street name associated with your address.')
-        }
-        if(!treeType){
-            errors.push('Please be sure to select the type of tree you want.')
-        }
-        if(!city){
-            errors.push('Please be sure to input a valid city in Minnesota.')
-        }
-        if(!ZipCode){
-            errors.push('Please be sure to input a valid zip code.')
-        }
+
+
 
         // TODO Validate the zipcode is in the range 55001 and 56763.
         // to check that the zip code is in Minnesota.
         // Make sure your script doesn't accept non-numeric input for the zip code.
+        function isMinnesotaZip(zipCode){
+            if (zipCode < 55001 && zipCode > 56763){
+                return false
+                } alert (errors.join('\n'))
+                return
+            }
+        else{}
 
         // Optional extra: add the class .error to any inputs with an error (and only inputs with an error)
         // to give the user visual feedback for which inputs need to be fixed or completed.
@@ -134,10 +132,30 @@
         // add an error message to the errors array. (Hint: use push to add to the end of the array)
         // Add one error message for each problem with the form.
 
+        if (name.trim.length === 0){
+            errors.push('Please enter a valid homeowner name')
+        }
+        if (houseNumber.trim.length === 0 ){
+            errors.push('Please enter a valid house number associated with your address. ')
+        }
+        if(streetName.trim.length === 0){
+            errors.push('Please enter a valid street name associated with your address.')
+        }
+        if(treeType.trim.length === 0){
+            errors.push('Please be sure to select the type of tree you want.')
+        }
+        if(city.trim.length  === 0){
+            errors.push('Please be sure to input a valid city in Minnesota.')
+        }
+        if(ZipCode.trim.length === 0){
+            errors.push('Please be sure to input a valid zip code.')
+        }
+
 
         // TODO - If there are any errors after checking all of the input elements,
         // display an alert with all of the error messages. (Hint: use join)
         // and then return from this function to prevent further processing
+
 
 
         // TODO - If there are no errors, use a template string to display an order

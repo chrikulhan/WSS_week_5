@@ -21,7 +21,7 @@ console.log(shout('Hello World', 'hello'))
 //The above (adding extra variables and having blank things that should
 //be filled in makes it easier to have optional parameters.
 //because things will still be called, but may not behave
-//exactly as expected.
+//exactly as expected.)
 
 //can save the output of the function in a variable:
 let message = shout('hello web programmers')
