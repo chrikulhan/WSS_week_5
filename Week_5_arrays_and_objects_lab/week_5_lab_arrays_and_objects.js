@@ -17,7 +17,7 @@ let iss_location = {
     "message": "success"
 }
 
-// TODO Extract the latitude value, and log it to the console.
+// TODONE Extract the latitude value, and log it to the console.
 
 let issPosition = iss_location.iss_position
 console.log(issPosition)
@@ -31,12 +31,11 @@ let latitudeShortVersion = iss_location.iss_position.latitude
 console.log(latitudeShortVersion)
 //49.2167
 
-// TODO Extract the longitude value, and log it to the console.
+// TODONE Extract the longitude value, and log it to the console.
 
 let longitudeShortVersion = iss_location.iss_position.longitude
 console.log(longitudeShortVersion)
 //100.5363
-
 
 
 /* b. Use this JavaScript object of exchange rates relative to Euros.
@@ -52,14 +51,33 @@ let rates = {
     "CAD": 1.5194
 }
 
-// TODO write code to add a new property for Swiss Francs. Symbol is CHF, value is 1.1787.
-// TODO if you had 100 Euros, write code to get the exchange rate from the object, then calculate
+// TODONE write code to add a new property for Swiss Francs. Symbol is CHF, value is 1.1787.
+console.log(rates)
+//{ AUD: 1.5417, BGN: 1.9558, BRL: 3.8959, CAD: 1.5194 }
+
+rates.CHF = 1.1787
+console.log(rates)
+//{ AUD: 1.5417, BGN: 1.9558, BRL: 3.8959, CAD: 1.5194, CHF: 1.1787 }
+
+// TODONE if you had 100 Euros, write code to get the exchange rate from the object, then calculate
 //      the equivalent value in Australian Dollars (AUD)
+
+let newAUD = rates.AUD*100
+console.log('Exchanging 100 Euros for Australian dollars will give you A$' + newAUD.toFixed(2) + '.' )
+//Exchanging 100 Euros for Australian dollars will give you A$154.17.
+
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
 
+// let selectedRates = []
+
+// rates.forEach(function(rate){
+//     // console.log(exchangeRate)
+//     selectedRates.push(rates[1])
 
 
+// let selectedRatesString = selectedRates.join(',')
+// console.log(selectedRatesString)
 
 /* c. Use this JavaScript array of objects of cat owners, and their cats. Source, moderncat.com
  */
@@ -71,11 +89,37 @@ let cats_and_owners = [
     { name: "Snoop Dogg", cat: "Miles Davis" }
 ]
 
-// TODO print Gary Oldman's cat's name
-// TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
+// TODONE print Gary Oldman's cat's name
+
+// console.log(cats_and_owners[1])
+//{ name: 'Gary Oldman', cat: 'Soymilk' }
+
+let GaryOldmansCat = cats_and_owners[1].cat
+console.log(GaryOldmansCat)
+//Soymilk
+
+
+// TODONE Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
+
+cats_and_owners[4] = {name: 'Taylor Swift', cat: 'Meredith'}
+console.log(cats_and_owners)
+//[
+//   { name: 'Bill Clinton', cat: 'Socks' },
+//   { name: 'Gary Oldman', cat: 'Soymilk' },
+//   { name: 'Katy Perry', cat: 'Kitty Purry' },
+//   { name: 'Snoop Dogg', cat: 'Miles Davis' },
+//   { name: 'Taylor Swift', cat: 'Meredith' }
+// ]
+
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
 //   Each line should have a message like "Snoop Dogg's cat is called Miles Davis"
 
+// cats_and_owners.forEach(function(){
+//     console.log(`${cats_and_owners.name}'s cat is named ${cats_and_owners.cat}`)
+// })
+cats_and_owners.forEach(function(){
+    console.log(`${cats_and_owners.name}'s cat is named ${cats_and_owners.cat}`)
+})
 
 
 /* d. Use the following JSON object, describing the Nobel Prize winners in 2017.

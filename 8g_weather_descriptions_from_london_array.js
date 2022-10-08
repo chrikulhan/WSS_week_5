@@ -113,6 +113,7 @@ let weatherDescriptionArray = weatherInfo.weather //this is an array
 //There are multiple things within this array(weatherInfo.weather), so we need
 //to use a for each loop:
 
+//video 8, timestamp ~24mins
 weatherDescriptionArray.forEach(function(weatherDescription){
 //     console.log(weatherDescription)
 // })
@@ -139,12 +140,14 @@ light intensity drizzle
 let descriptions = []
 
 weatherDescriptionArray.forEach(function(weatherDescription){
-    //console.log(weatherDescription.description
-})
+    // console.log(weatherDescription.description) instead of console.logging this, push it
+//    into the new array "descriptions" (just above^^^)
     descriptions.push(weatherDescription.description)
+})
 //rename the descriptions into a string, and use join to make them into a string:
 let descriptionsString = descriptions.join(', ')
 //console.log to see the descriptionsString:
 console.log('The weather is ' + descriptionsString)
+//output: The weather is mist, light intensity drizzle
 
-
+//Another challenge: can you read the pressure or the humidity??
