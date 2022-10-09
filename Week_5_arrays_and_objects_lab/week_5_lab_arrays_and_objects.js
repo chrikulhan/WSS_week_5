@@ -43,7 +43,6 @@ The properties are currency symbols, the values are the exchange rates.
 Data source: http://fixer.io/
 * */
 
-
 let rates = {
     "AUD": 1.5417,
     "BGN": 1.9558,
@@ -69,19 +68,34 @@ console.log('Exchanging 100 Euros for Australian dollars will give you A$' + new
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
 
-//wrong:
-// rates.forEach(function(rate){
-//     console.log(rates)
-//     })
+findMaxRate = []
 
-//wrong:
-// rates.forEach(function(rate){
-//     // console.log(exchangeRate)
-//     selectedRates.push(rates[1])
+for (let countryCode in rates){
+    // console.log(countryCode, rates[countryCode])
+//AUD 1.5417
+// BGN 1.9558
+// BRL 3.8959
+// CAD 1.5194
+// CHF 1.1787
+//     console.log(countryCode)
+// AUD
+// BGN
+// BRL
+// CAD
+// CHF
+    console.log(rates[countryCode])
+// 1.5417
+// 1.9558
+// 3.8959
+// 1.5194
+// 1.1787
 
-//wrong:
-// let selectedRatesString = selectedRates.join(',')
-// console.log(selectedRatesString)
+//     wrong:
+//     console.log(rates[countryCode].join)
+//    wrong:
+//     findMaxRate = rates[countryCode].join.sort()
+//     console.log(findMaxRate)
+}
 
 /* c. Use this JavaScript array of objects of cat owners, and their cats. Source, moderncat.com
  */
@@ -144,11 +158,6 @@ for (let name in cats_and_owners){
 // 2 { name: 'Katy Perry', cat: 'Kitty Purry' }
 // 3 { name: 'Snoop Dogg', cat: 'Miles Davis' }
 // 4 { name: 'Taylor Swift', cat: 'Meredith' }
-
-
-
-
-
 
 // cats_and_owners.forEach(function(name,cat){
 //     console.log(`${name}'s cat is named ${cat}`)

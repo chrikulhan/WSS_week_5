@@ -81,6 +81,7 @@
     let submitButton = document.querySelector('#submit-order')
 
     let orderSummaryParagraph = document.querySelector('#order-summary')
+    console.log(orderSummaryParagraph)
 
     submitButton.addEventListener('click', function() {
 
@@ -110,20 +111,27 @@
         // TODO Validate the zipcode is in the range 55001 and 56763.
         // to check that the zip code is in Minnesota.
         // Make sure your script doesn't accept non-numeric input for the zip code.
-        function isMinnesotaZip(zipCode){
-            if (zipCode < 55001 && zipCode > 56763){
-                return false
-                } alert (errors.join('\n'))
 
+        let errors = []
+
+        function isMinnesotaZip(zipCode){
+        //    reference: https://mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
+        //if zipCode is not a number: return false:
+            if (!isNaN(zipCode)){
+                alert ('Please enter a valid numeric zip code. ')
+                return
+            } else {
+                if (zipCode < 55001 && zipCode > 56763) {
+                    return false
+                }
+                alert(errors.join('\n'))
+            }
 
         // Optional extra: add the class .error to any inputs with an error (and only inputs with an error)
         // to give the user visual feedback for which inputs need to be fixed or completed.
         // There's a style for input.error and select.error defined in the styles (in the head)
         // which will be applied if you give the class .error to any elements on the page.
         // Make sure you remove this class when the form is completed correctly.
-
-        let errors = []
-
         // If a form element has not been completed, or if the data is not valid,
         // add an error message to the errors array. (Hint: use push to add to the end of the array)
         // Add one error message for each problem with the form.
@@ -145,9 +153,11 @@
         }
         if(ZipCode.trim.length === 0){
             errors.push('Please be sure to input a valid zip code.')
-        }
+        } return } ('Thank you for your entry.')
 
-        // TODO - If there are any errors after checking all of the input elements,
+
+
+    // TODO - If there are any errors after checking all of the input elements,
         // display an alert with all of the error messages. (Hint: use join)
         // and then return from this function to prevent further processing
 
