@@ -6,13 +6,23 @@
 */
 
 //an object with properties table, chair, couch: values are color of each:
-// let furniture = {table : 'red', chair: 'blue', couch: 'green'};
+let furniture = {table : 'red', chair: 'blue', couch: 'green'};
 //
 // //looping over all of the properties
-// for (let f in furniture){
-//     console.log(f); //f is table, chair, couch - property names
-//     console.log(furniture(f)); //this is the value for property f
-// }
+for (let f in furniture){
+    // console.log(f); //f is table, chair, couch - property names
+    //output:
+    // table
+    // chair
+    // couch
+
+    console.log(furniture[f]); //this is the value for property f
+// output:
+// red
+// blue
+// green
+}
+
 
 // another example
 let user = {

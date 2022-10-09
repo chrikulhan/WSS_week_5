@@ -69,13 +69,17 @@ console.log('Exchanging 100 Euros for Australian dollars will give you A$' + new
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
 
-// let selectedRates = []
+//wrong:
+// rates.forEach(function(rate){
+//     console.log(rates)
+//     })
 
+//wrong:
 // rates.forEach(function(rate){
 //     // console.log(exchangeRate)
 //     selectedRates.push(rates[1])
 
-
+//wrong:
 // let selectedRatesString = selectedRates.join(',')
 // console.log(selectedRatesString)
 
@@ -103,6 +107,7 @@ console.log(GaryOldmansCat)
 
 cats_and_owners[4] = {name: 'Taylor Swift', cat: 'Meredith'}
 console.log(cats_and_owners)
+// console.log(cats_and_owners[4].cat) //test //Meredith
 //[
 //   { name: 'Bill Clinton', cat: 'Socks' },
 //   { name: 'Gary Oldman', cat: 'Soymilk' },
@@ -114,12 +119,44 @@ console.log(cats_and_owners)
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
 //   Each line should have a message like "Snoop Dogg's cat is called Miles Davis"
 
+//wrong
+// for (let c in cats_and_owners){
+//     console.log(c);
+//     console.log(cats_and_owners[c])
+// }
+//output:
+// 0
+// { name: 'Bill Clinton', cat: 'Socks' }
+// 1
+// { name: 'Gary Oldman', cat: 'Soymilk' }
+// 2
+// { name: 'Katy Perry', cat: 'Kitty Purry' }
+// 3
+// { name: 'Snoop Dogg', cat: 'Miles Davis' }
+// 4
+// { name: 'Taylor Swift', cat: 'Meredith' }
+for (let name in cats_and_owners){
+    console.log(name, cats_and_owners[name])
+}
+//output:
+// 0 { name: 'Bill Clinton', cat: 'Socks' }
+// 1 { name: 'Gary Oldman', cat: 'Soymilk' }
+// 2 { name: 'Katy Perry', cat: 'Kitty Purry' }
+// 3 { name: 'Snoop Dogg', cat: 'Miles Davis' }
+// 4 { name: 'Taylor Swift', cat: 'Meredith' }
+
+
+
+
+
+
+// cats_and_owners.forEach(function(name,cat){
+//     console.log(`${name}'s cat is named ${cat}`)
+// })
 // cats_and_owners.forEach(function(){
 //     console.log(`${cats_and_owners.name}'s cat is named ${cats_and_owners.cat}`)
 // })
-cats_and_owners.forEach(function(){
-    console.log(`${cats_and_owners.name}'s cat is named ${cats_and_owners.cat}`)
-})
+// console.log(cats_and_owners.name)
 
 
 /* d. Use the following JSON object, describing the Nobel Prize winners in 2017.
