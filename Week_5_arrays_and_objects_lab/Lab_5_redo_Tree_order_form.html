@@ -94,41 +94,63 @@
         let zipCode = homeownerZipCodeInput.value
 
         // TODO Validate that all six input and select elements have been completed
-        if (name.trim.length === 0) {
-            errors.push('Please enter a valid homeowner name')
+        if (name.length === 0) {
+            // errors.push('Please enter a valid homeowner name')
             alert('Please enter a valid homeowner name')
-        } else if (houseNumber.trim.length === 0) {
-            errors.push('Please enter a valid house number associated with your address. ')
-            alert('Please enter a valid house number associated with your address. ')
-        } else if (streetName.trim.length === 0) {
-            errors.push('Please enter a valid street name associated with your address.')
-            alert('Please enter a valid street name associated with your address.')
-        } else if (treeType.trim.length === 0) {
-            errors.push('Please be sure to select the type of tree you want.')
-            alert('Please be sure to select the type of tree you want.')
-        } else if (city.trim.length === 0) {
-            errors.push('Please be sure to input a valid city in Minnesota.')
-            alert('Please be sure to input a valid city in Minnesota.')
-        } else if (zipCode.trim.length === 0) {
-            errors.push('Please be sure to input a valid zip code.')
-            alert('Please be sure to input a valid zip code.')
-        } else {
-            alert('Thank you for your entry.')
+        // } else {
+        //     return
         }
+            else if (houseNumber.length === 0) {
+            // errors.push('Please enter a valid house number associated with your address. ')
+            alert('Please enter a valid house number associated with your address. ')
+        // } else {
+        //     return
+        }
+            else if (streetName.length === 0) {
+            // errors.push('Please enter a valid street name associated with your address.')
+            alert('Please enter a valid street name associated with your address.')
+        // } else {
+        //     return
+        }
+
+            else if (city.length === 0) {
+            // errors.push('Please be sure to input a valid city in Minnesota.')
+            alert('Please be sure to input a valid city in Minnesota.')
+        // } else {
+        //         return
+            }
+        // else if (treeType.length === 0) {
+        //     // errors.push('Please be sure to select the type of tree you want.')
+        //     alert('Please be sure to select the type of tree you want.')
+        //     // } else {
+        //     //     return
+        // }
+
         // TODO Validate the zipcode is in the range 55001 and 56763.
+//    reference: https://mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
+
+            else if (zipCode.length === 0 || (isNaN(zipCode)) || (zipCode < 55001 && zipCode > 56763)) {
+            // errors.push('Please be sure to input a valid zip code.')
+            alert('Please be sure to input a valid zip code.')
+        // } else {
+        // //   Todo add in tree-type selector using ID (click listener??)
+        } else {
+            alert(`Your order has been received`)
+        }
+    })
         // to check that the zip code is in Minnesota.
         // Make sure your script doesn't accept non-numeric input for the zip code.
         // function isMinnesotaZip(zipCode) { //from video 3 second half
         //    reference: https://mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
         // if zipCode is not a number: return false:
-        if (!isNaN(zipCode)) {
-            alert('Please enter a valid numeric zip code. ')
-            return false
-        } else if (zipCode >= 55001 && zipCode <= 56763)
-        {
-            return true
-        }
-    })
+        // if (!isNaN(zipCode)) {
+        //     alert('Please enter a valid numeric zip code. ')
+        //     return false
+        // } else if (zipCode >= 55001 && zipCode <= 56763)
+        // {
+        //     return true
+        // }
+
         // Optional extra: add the class .error to any inputs with an error (and only inputs with an error)
         // to give the user visual feedback for which inputs need to be fixed or completed.
         // There's a style for input.error and select.error defined in the styles (in the head)
@@ -136,6 +158,8 @@
         // Make sure you remove this class when the form is completed correctly.
 
         let errors = []
+
+        // console.log(errors)
 
         // If a form element has not been completed, or if the data is not valid,
         // add an error message to the errors array. (Hint: use push to add to the end of the array)
@@ -151,7 +175,7 @@
         // summary in the order summary paragraph.
 
 
-    })
+    // })
 
 
 
