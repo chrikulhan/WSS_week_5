@@ -1,6 +1,6 @@
 /* d. Use the following JSON object, describing the Nobel Prize winners in 2017.
 Source http://api.nobelprize.org/v1/prize.json?year=2017
-(used levelup.gitconnected.com to help me)
+(used levelup.gitconnected.com to help me with node)
  */
 
 let nobel_prize_winners_2017 = {
