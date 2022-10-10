@@ -2,7 +2,7 @@
   "name": "wss_week_5",
   "version": "1.0.0",
   "description": "",
-  "main": "1hello.js",
+  "main": "../1hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
