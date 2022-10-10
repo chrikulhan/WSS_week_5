@@ -143,6 +143,8 @@ let whisper = text.toLowerCase() //and to lowercase
 let whereIsW = text.indexOf('w') //Index of first matching character or -1 if not found
 let whereIsZ = text.indexOf('z') //index of first matching character or -1 if not founds
 let whisperAndShout = whisper.concat(shout) //join strings together
+console.log(whisperAndShout)
+//output: hello worldHELLO WORLD
 let replace0 = text.replace('o', '0')
 //^^^replace the first instance of first thing with second thing.
 //See reference for more info on this, can also do global

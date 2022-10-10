@@ -81,9 +81,9 @@
     let submitButton = document.querySelector('#submit-order')
 
     let orderSummaryParagraph = document.querySelector('#order-summary')
-    console.log(orderSummaryParagraph)
+    // console.log(orderSummaryParagraph)
 
-    submitButton.addEventListener('click', function() {
+submitButton.addEventListener('click', function() {
 
         let name = homeownerNameInput.value
         let houseNumber = homeownerHouseNumberInput.value
@@ -98,78 +98,104 @@
 
         // TODO Validate that all six input and select elements have been completed
         //  - check they all have a value
-        if (name.length > 0)
-        if (houseNumber.length > 0)
-        if (streetName.length > 0)
-        if (treeType.length > 0)
-        if (city.length > 0)
-        if (zipCode > 0){
-        } else {
+        if (name.length === 0){
+            alert('Please enter a name to this form.')
             return
+        }
+        else (houseNumber.length === 0){
+            alert('Please enter a house number to this form.')
+            return
+        }
+        else (streetName.length === 0) {
+        alert('Please enter a street name to this form.')
+        return
+        }
+        else (treeType.length === 0){
+        alert('Please enter a tree type to this form.')
+        return
+        }
+        else (city.length === 0){
+        alert('Please enter a city to this form.')
+        return
+        }
+        else (zipCode.length > 0){
+        alert('Please enter a zip code to this form.')
+        return
+        } else {
+            alert('Please enter valid information.')
+        return
         }
 
         // TODO Validate the zipcode is in the range 55001 and 56763.
+
+        // if (zipCode >=55001 && zipCode <=56763) {
+        // return true
+        // } else {
+        //     return false
+        // }
         // to check that the zip code is in Minnesota.
         // Make sure your script doesn't accept non-numeric input for the zip code.
 
         let errors = []
 
-        function isMinnesotaZip(zipCode){
+        // function isMinnesotaZip(zipCode){
         //    reference: https://mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
         //if zipCode is not a number: return false:
             if (!isNaN(zipCode)){
                 alert ('Please enter a valid numeric zip code. ')
-                return
+                return false
             } else {
-                if (zipCode < 55001 && zipCode > 56763) {
-                    return false
+                if (zipCode >= 55001 && zipCode <= 56763) {
+                    return true
+                    // }
+                    // alert(errors.join('\n'))
                 }
-                alert(errors.join('\n'))
+
+                // Optional extra: add the class .error to any inputs with an error (and only inputs with an error)
+                // to give the user visual feedback for which inputs need to be fixed or completed.
+                // There's a style for input.error and select.error defined in the styles (in the head)
+                // which will be applied if you give the class .error to any elements on the page.
+                // Make sure you remove this class when the form is completed correctly.
+                // If a form element has not been completed, or if the data is not valid,
+                // add an error message to the errors array. (Hint: use push to add to the end of the array)
+                // Add one error message for each problem with the form.
+
+                if (name.trim.length === 0) {
+                    errors.push('Please enter a valid homeowner name')
+                    alert('Please enter a valid homeowner name')
+                } else if (houseNumber.trim.length === 0) {
+                    errors.push('Please enter a valid house number associated with your address. ')
+                    alert('Please enter a valid house number associated with your address. ')
+                } else if (streetName.trim.length === 0) {
+                    errors.push('Please enter a valid street name associated with your address.')
+                    alert('Please enter a valid street name associated with your address.')
+                } else if (treeType.trim.length === 0) {
+                    errors.push('Please be sure to select the type of tree you want.')
+                    alert('Please be sure to select the type of tree you want.')
+                } else if (city.trim.length === 0) {
+                    errors.push('Please be sure to input a valid city in Minnesota.')
+                    alert('Please be sure to input a valid city in Minnesota.')
+                } else if (ZipCode.trim.length === 0) {
+                    errors.push('Please be sure to input a valid zip code.')
+                    alert('Please be sure to input a valid zip code.')
+                } else {
+                    console.log('Thank you for your entry.')
+                }
+
+
+                // TODO - If there are any errors after checking all of the input elements,
+                // display an alert with all of the error messages. (Hint: use join)
+                // and then return from this function to prevent further processing
+                if (errors.length > 0) {
+                    let errorMsg = errors.join('\n')
+                    alert(errorMsg)
+                    return
+                }
             }
-
-        // Optional extra: add the class .error to any inputs with an error (and only inputs with an error)
-        // to give the user visual feedback for which inputs need to be fixed or completed.
-        // There's a style for input.error and select.error defined in the styles (in the head)
-        // which will be applied if you give the class .error to any elements on the page.
-        // Make sure you remove this class when the form is completed correctly.
-        // If a form element has not been completed, or if the data is not valid,
-        // add an error message to the errors array. (Hint: use push to add to the end of the array)
-        // Add one error message for each problem with the form.
-
-        if (name.trim.length === 0){
-            errors.push('Please enter a valid homeowner name')
-        }
-        if (houseNumber.trim.length === 0 ){
-            errors.push('Please enter a valid house number associated with your address. ')
-        }
-        if(streetName.trim.length === 0){
-            errors.push('Please enter a valid street name associated with your address.')
-        }
-        if(treeType.trim.length === 0){
-            errors.push('Please be sure to select the type of tree you want.')
-        }
-        if(city.trim.length  === 0){
-            errors.push('Please be sure to input a valid city in Minnesota.')
-        }
-        if(ZipCode.trim.length === 0){
-            errors.push('Please be sure to input a valid zip code.')
-        } return } ('Thank you for your entry.')
-
-
-
-    // TODO - If there are any errors after checking all of the input elements,
-        // display an alert with all of the error messages. (Hint: use join)
-        // and then return from this function to prevent further processing
-
-
+            })
 
         // TODO - If there are no errors, use a template string to display an order
         // summary in the order summary paragraph.
-
-
-
-
-
 
 </script>
 
