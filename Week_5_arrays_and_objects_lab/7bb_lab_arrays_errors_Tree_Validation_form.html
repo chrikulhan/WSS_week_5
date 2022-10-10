@@ -100,30 +100,22 @@ submitButton.addEventListener('click', function() {
         //  - check they all have a value
         if (name.length === 0){
             alert('Please enter a name to this form.')
-            return
         }
-        else (houseNumber.length === 0){
+        if else (houseNumber.length === 0){
             alert('Please enter a house number to this form.')
-            return
         }
-        else (streetName.length === 0) {
+        if else (streetName.length === 0) {
         alert('Please enter a street name to this form.')
-        return
         }
-        else (treeType.length === 0){
+        if else (treeType.length === 0){
         alert('Please enter a tree type to this form.')
-        return
         }
-        else (city.length === 0){
+        if else (city.length === 0){
         alert('Please enter a city to this form.')
-        return
         }
-        else (zipCode.length > 0){
-        alert('Please enter a zip code to this form.')
-        return
+        if else (zipCode.length > 0){
         } else {
             alert('Please enter valid information.')
-        return
         }
 
         // TODO Validate the zipcode is in the range 55001 and 56763.
