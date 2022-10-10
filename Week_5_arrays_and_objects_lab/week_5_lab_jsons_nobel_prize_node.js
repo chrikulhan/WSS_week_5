@@ -219,16 +219,115 @@ console.log(AfterEveryThingSurName)
 console.log('breakbreakbreak')
 
 console.log(`Final answer, the 2017 literature Nobel prize went to: ${AfterEveryThingFirstName} ${AfterEveryThingSurName}.`)
+console.log('breakbreakbreak')
 
 // TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification
 //  if a laureate was added, or removed.
+idCharactersOfPhysicsLaureates = nobel_prize_winners_2017.prizes[0].laureates
+console.log(idCharactersOfPhysicsLaureates)
+//[
+//   {
+//     id: '941',
+//     firstname: 'Rainer',
+//     surname: 'Weiss',
+//     motivation: '"for decisive contributions to the LIGO detector and the observation of gravitational waves"',
+//     share: '2'
+//   },
+//   {
+//     id: '942',
+//     firstname: 'Barry C.',
+//     surname: 'Barish',
+//     motivation: '"for decisive contributions to the LIGO detector and the observation of gravitational waves"',
+//     share: '4'
+//   },
+//   {
+//     id: '943',
+//     firstname: 'Kip S.',
+//     surname: 'Thorne',
+//     motivation: '"for decisive contributions to the LIGO detector and the observation of gravitational waves"',
+//     share: '4'
+//   }
+// ]
+console.log('breakbreakbreak')
 
-
-
+for (let IDnumber in idCharactersOfPhysicsLaureates){
+    console.log(idCharactersOfPhysicsLaureates[IDnumber].id)
+}
+// 941
+// 942
+// 943
+console.log('breakbreakbreak')
 
 // TODO write code to print the names of all of the prize categories (So your output would start physics,
 //  chemistry, medicine... ).
+console.log(nobel_prize_winners_2017)
+//{
+//   prizes: [
+//     { year: '2017', category: 'physics', laureates: [Array] },
+//     { year: '2017', category: 'chemistry', laureates: [Array] },
+//     { year: '2017', category: 'medicine', laureates: [Array] },
+//     { year: '2017', category: 'literature', laureates: [Array] },
+//     { year: '2017', category: 'peace', laureates: [Array] },
+//     { year: '2017', category: 'economics', laureates: [Array] }
+//   ]
+// }
+console.log('breakbreakbreak')
+let prizeGroups = nobel_prize_winners_2017.prizes
+console.log(prizeGroups)
+//[
+//   {
+//     year: '2017',
+//     category: 'physics',
+//     laureates: [ [Object], [Object], [Object] ]
+//   },
+//   {
+//     year: '2017',
+//     category: 'chemistry',
+//     laureates: [ [Object], [Object], [Object] ]
+//   },
+//   {
+//     year: '2017',
+//     category: 'medicine',
+//     laureates: [ [Object], [Object], [Object] ]
+//   },
+//   { year: '2017', category: 'literature', laureates: [ [Object] ] },
+//   { year: '2017', category: 'peace', laureates: [ [Object] ] },
+//   { year: '2017', category: 'economics', laureates: [ [Object] ] }
+// ]
+console.log('breakbreakbreak')
+
+for (let group in prizeGroups){
+    console.log(prizeGroups[group].category)
+}
+//physics
+// chemistry
+// medicine
+// literature
+// peace
+// economics
+console.log('breakbreakbreak')
+
 // TODO write code to print the total number of prize categories
+
+for (let group in prizeGroups){
+    numberOfCategories = (prizeGroups[group].category)
+    console.log(numberOfCategories)
+}
+//wrong: but they are listed?
+//physics
+// chemistry
+// medicine
+// literature
+// peace
+// economics
+
+//wrong:::How to put items into an array and then measure the length of that array?
+// let length = numberOfCategories.length
+// console.log(length)
+
+
 // TODO write code to count the total number of laureates from 2017.
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
 
+//Moving on. I don't currently know how to put things into an array or how to count them once I have them,
+//so I would be wasting my time. I'll come back.
